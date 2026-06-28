@@ -75,7 +75,7 @@ Secrets GitHub requis (Settings > Secrets) :
 
 ```bash
 # Première installation
-ssh -i ~/.ssh/ec2-laurent-free-key ubuntu@35.180.22.199
+ssh -i ~/.ssh/ec2-laurent-free-key ubuntu@15.237.255.236
 git clone https://github.com/ljacques99/nextaws.git /home/ubuntu/nextaws
 cd /home/ubuntu/nextaws
 npm ci
@@ -86,8 +86,8 @@ npm start
 npm run build                   # en local
 rsync -az --delete --exclude=node_modules \
   .next/ public/ package.json package-lock.json \
-  ubuntu@35.180.22.199:/home/ubuntu/nextaws/
-ssh ubuntu@35.180.22.199 \
+  ubuntu@15.237.255.236:/home/ubuntu/nextaws/
+ssh ubuntu@15.237.255.236 \
   "cd /home/ubuntu/nextaws && npm ci --omit=dev && sudo systemctl restart nextaws"
 ```
 
